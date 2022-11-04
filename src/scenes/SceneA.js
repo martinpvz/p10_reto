@@ -159,7 +159,7 @@ class SceneA extends Phaser.Scene{
             // this.musicaFondo.stop();
             this.contadorVidas -= 1;
             // eventsCenter.emit('update-count', this.contadorVidas)
-            this.events.emit('addScore');
+            this.events.emit('loseHeart');
             this.javier.body.x=50;
             console.log(this.contadorVidas)
             if (this.contadorVidas==0){
@@ -175,9 +175,8 @@ class SceneA extends Phaser.Scene{
             this.gong.play();
             this.instrucciones.setAlpha(0);
             this.sound.pauseAll();
-            this.scene.start("SceneB"); 
+            //this.scene.start("SceneB"); 
             this.scene.start('SceneB', { score: this.contadorVidas });
-
         });
     }
 

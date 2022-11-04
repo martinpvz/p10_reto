@@ -147,7 +147,7 @@ class SceneB extends Phaser.Scene{
             // this.musicaFondo.stop();
             // this.scene.restart();
             this.finalScore -= 1;
-            this.events.emit('addScore');
+            this.events.emit('loseHeart');
             this.javier.body.x=50;
             this.javier.body.y=10;
             if (this.finalScore==0){
@@ -160,10 +160,9 @@ class SceneB extends Phaser.Scene{
 
         //COLISIÓN CON PUERTA / FINAL DE NIVEL
         this.physics.add.collider(this.javier, this.puerta, () => {
-            this.gong.play();
             this.sound.pauseAll();
-            this.end.setAlpha(1);
-            this.fondo.setDepth(3).setAlpha(1);
+            this.events.emit('YouWin');
+            this.scene.start('Win');
         });
     }
 
