@@ -1,3 +1,5 @@
+import Win from "./scenes/Win.js";
+import GameOver from "./scenes/GameOver.js";
 import SceneA from "./scenes/SceneA.js";
 import SceneB from "./scenes/SceneB.js";
 import Menu from "./scenes/Menu.js";
@@ -15,7 +17,7 @@ const config = {
                                     // se refiere a dónde se pondrá el canvas o lienzo
     pixelArt: true,		            //Diseño con pixeles definidos (no borrosos)
     backgroundColor: "#34495e", 	//Color de fondo del canvas ()
-    scene: [Bootloader,Menu,SceneA,SceneB],    //Aquí irá la lista de scenas del juego
+    scene: [Bootloader,Menu,SceneA,SceneB,GameOver,Win],    //Aquí irá la lista de scenas del juego
     banner:{
         hidePhaser: true,
         text: "#fff00f",

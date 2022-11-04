@@ -11,7 +11,7 @@ class Bootloader extends Phaser.Scene{
     preload() {
         //PARA MENU
         this.load.path = './assets/';
-        this.load.image(['nube','fondo','play','info','conf','logo','sound','noSound','infoCuadro']);
+        this.load.image(['nube','fondo2','play','info','conf','logo2','sound','noSound','infoCuadro']);
         this.load.audio('pop', ['./pop.mp3']);
         this.load.audio('InicioM', ['./InicioM2.mp3']);
         //PARA ESCENA A
@@ -26,10 +26,12 @@ class Bootloader extends Phaser.Scene{
         'escalera', 'ninja','fondo_opc1','coleccionable','end']);
         this.load.audio('gong', ['./gong.mp3']);
         this.load.audio('musicaFondo', ['./musicaFondo.mp3']);
+        //PARA ESCENA GAMEOVER
+        this.load.image(['gameOverBack','botonMenu2']);
     }
 
     create(){
-        this.scene.start('SceneB');
+        this.scene.start('GameOver');
     }
 
     update(time, delta) {
