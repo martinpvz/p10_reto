@@ -1,6 +1,7 @@
 import Fisicas from "./scenes/Fisicas.js";
 import Fisicas2 from "./scenes/Fisicas2.js";
 import Inicio from "./scenes/Inicio.js";
+import HUD from "./scenes/HUD.js";
 
 const config = {
     title: "Curso Phaser",		    //Nombre del juego (opcional)
@@ -14,7 +15,7 @@ const config = {
                                     // se refiere a dónde se pondrá el canvas o lienzo
     pixelArt: true,		            //Diseño con pixeles definidos (no borrosos)
     backgroundColor: "#34495e", 	//Color de fondo del canvas ()
-    scene: [Inicio,Fisicas,Fisicas2],    //Aquí irá la lista de scenas del juego
+    scene: [Inicio,Fisicas,Fisicas2,HUD],    //Aquí irá la lista de scenas del juego
     banner:{
         hidePhaser: true,
         text: "#fff00f",

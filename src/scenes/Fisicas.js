@@ -1,3 +1,5 @@
+// import eventsCenter 
+import eventsCenter from './EventsCenter.js'
 class Fisicas extends Phaser.Scene{
     constructor(){
         super({
@@ -19,6 +21,7 @@ class Fisicas extends Phaser.Scene{
     }
 
     create() {
+        this.contadorVidas=3;
         //MÚSICA
         this.gong = this.sound.add('gong',{loop:false});
         this.musicaFondo = this.sound.add('musicaFondo',{loop:false});
@@ -157,9 +160,21 @@ class Fisicas extends Phaser.Scene{
             // this.javier.setAccelerationX(0);
         });
         //Choque con picos
+        console.log(this.contadorVidas)
         this.physics.add.collider(this.javier, picos, () => {
-            this.musicaFondo.stop();
-            this.scene.restart();
+            // this.musicaFondo.stop();
+            this.contadorVidas -= 1;
+            // eventsCenter.emit('update-count', this.contadorVidas)
+            this.events.emit('addScore');
+            this.javier.body.x=50;
+            console.log(this.contadorVidas)
+            if (this.contadorVidas==0){
+                this.musicaFondo.stop();
+                // this.scene.restart('HUD');
+                // this.scene.stop("HUD");
+                this.scene.start('Inicio');
+            }
+            // this.scene.restart();
         });
         //CHOQUE CON PUERTA / FINAL DE NIVEL
         this.physics.add.collider(this.javier, this.puerta, () => {

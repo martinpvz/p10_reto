@@ -13,6 +13,8 @@ class Inicio extends Phaser.Scene{
         this.load.image(['nube','fondo','play','info','conf','logo','sound','noSound','infoCuadro']);
         this.load.audio('pop', ['./pop.mp3']);
         this.load.audio('InicioM', ['./InicioM2.mp3']);
+
+        this.contador = 0;
     }
 
     create(){
@@ -94,9 +96,11 @@ class Inicio extends Phaser.Scene{
             }
         });
         //EVENTO SÓLO PARA PLAY
+        console.log(this.scene.manager.scenes);
         this.play.on(eventos.POINTER_DOWN, function () {
             this.sound.pauseAll();
-            this.scene.start("Fisicas");         
+            this.scene.start("Fisicas"); 
+            this.scene.start("HUD");         
         }, this);
         //EVENTO SÓLO PARA CONFIG
         this.config.on(eventos.POINTER_DOWN, function () {
