@@ -11,9 +11,6 @@ class SceneB extends Phaser.Scene{
         this.finalScore = data.score;
     }
     
-    // preload() {
-    //     this.load.path = './assets/';
-    // }
 
     create() {
         //MÚSICA
