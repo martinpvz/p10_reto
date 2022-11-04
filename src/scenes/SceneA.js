@@ -176,6 +176,8 @@ class SceneA extends Phaser.Scene{
             this.instrucciones.setAlpha(0);
             this.sound.pauseAll();
             this.scene.start("SceneB"); 
+            this.scene.start('SceneB', { score: this.contadorVidas });
+
         });
     }
 
