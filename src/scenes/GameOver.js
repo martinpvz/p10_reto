@@ -8,10 +8,8 @@ class GameOver extends Phaser.Scene{
     init() {
         console.log('Escena GameOver');
     }
-    preload() {
-        this.load.path = './assets/';
-        this.load.audio('pop', ['./pop.mp3']);
-    }
+    // preload() {
+    // }
 
     create(){
         this.fondo = this.add.image(775, 395, 'gameOverBack').setScale(.365);

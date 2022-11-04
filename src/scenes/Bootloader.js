@@ -35,7 +35,7 @@ class Bootloader extends Phaser.Scene{
     }
 
     create(){
-        this.scene.start('Menu');
+        this.scene.start('');
     }
 
     update(time, delta) {
