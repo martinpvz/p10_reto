@@ -11,7 +11,7 @@ class Bootloader extends Phaser.Scene{
     preload() {
         //PARA MENU
         this.load.path = './assets/';
-        this.load.image(['nube','fondo2','play','info','conf','logo2','sound','noSound','infoCuadro']);
+        this.load.image(['nube','fondo2','play','info','conf','logo2','sound','noSound','infoCuadro','noobLovers']);
         this.load.audio('pop', ['./pop.mp3']);
         this.load.audio('InicioM', ['./InicioM2.mp3']);
         //PARA ESCENA A
@@ -35,7 +35,7 @@ class Bootloader extends Phaser.Scene{
     }
 
     create(){
-        this.scene.start('');
+        this.scene.start('Menu');
     }
 
     update(time, delta) {

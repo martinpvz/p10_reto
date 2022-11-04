@@ -19,8 +19,9 @@ class Menu extends Phaser.Scene{
         //IMÁGENES DE MENÚ
         //this.fondo = this.add.image(800,400, 'fondo2').setScale(1.25,1.1);
         this.fondo = this.add.image(800,400, 'fondo2').setScale(.37,.33);
-        this.logo = this.add.image(450,180, 'logo2').setScale(1.2).setDepth(4);
-        this.play = this.add.image(430,500, 'play').setScale(.25).setInteractive().setDepth(4);
+        this.logo = this.add.image(450,320, 'logo2').setScale(1).setDepth(4);
+        this.noobLovers = this.add.image(420,100, 'noobLovers').setScale(.5).setDepth(4);
+        this.play = this.add.image(430,600, 'play').setScale(.25).setInteractive().setDepth(4);
         //this.config = this.add.image(200,700, 'conf').setScale(.25).setInteractive().setDepth(4);
         //this.info = this.add.image(1300,700, 'info').setScale(.25).setInteractive().setDepth(4);
         //this.infoCuadro = this.add.image(1300,460, 'infoCuadro').setScale(.42).setDepth(4).setAlpha(0);
