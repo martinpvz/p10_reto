@@ -144,15 +144,11 @@ class SceneB extends Phaser.Scene{
         
         //COLISIÓN CON PICOS
         this.physics.add.collider(this.javier, this.picos, () => {
-            // this.musicaFondo.stop();
-            // this.scene.restart();
             this.finalScore -= 1;
             this.events.emit('loseHeart');
             this.javier.body.x=50;
             this.javier.body.y=10;
             if (this.finalScore==0){
-                // this.musicaFondo.stop();
-                // this.musicaFondo.stop();
                 this.sound.pauseAll();
                 this.scene.start('GameOver');
             }
@@ -188,7 +184,6 @@ class SceneB extends Phaser.Scene{
 
         if ((this.cursors.up.isDown && this.javier.body.onFloor()))
         {
-            //console.log("Entro a if");
             this.javier.setVelocityY(-500);
         }
 

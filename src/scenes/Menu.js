@@ -9,33 +9,25 @@ class Menu extends Phaser.Scene{
         console.log('Escena Inicio');
     }
 
-    //preload(){}
-
     create(){
         this.scene.moveAbove('Bootloader','HUD');
-        //Banderas
+        // Banderas
         this.click1 = false;
         this.click2 = false;
         this.noSound = false;
-        //IMÁGENES DE MENÚ
-        //this.fondo = this.add.image(800,400, 'fondo2').setScale(1.25,1.1);
+        // IMÁGENES DE MENÚ
         this.fondo = this.add.image(800,400, 'fondo2').setScale(.37,.33);
         this.logo = this.add.image(450,320, 'logo2').setScale(1).setDepth(4);
         this.noobLovers = this.add.image(420,100, 'noobLovers').setScale(.5).setDepth(4);
         this.play = this.add.image(430,600, 'play').setScale(.25).setInteractive().setDepth(4);
-        //this.config = this.add.image(200,700, 'conf').setScale(.25).setInteractive().setDepth(4);
-        //this.info = this.add.image(1300,700, 'info').setScale(.25).setInteractive().setDepth(4);
-        //this.infoCuadro = this.add.image(1300,460, 'infoCuadro').setScale(.42).setDepth(4).setAlpha(0);
-        //this.soundIcon = this.add.image(300,580, 'sound').setScale(.25).setInteractive().setDepth(4).setAlpha(0);
-        //this.noSoundIcon = this.add.image(400,700, 'noSound').setScale(.25).setInteractive().setDepth(4).setAlpha(0);
-        //MÚSICA DE FONDO
+        // MÚSICA DE FONDO
         this.mainmenu = this.sound.add('InicioM', {loop:false,volume: 0.8});
         this.mainmenu.play();
-        //MÚSICA CLICK SOBRE BOTÓN
+        // SONIDO CLICK SOBRE BOTÓN
         this.pop = this.sound.add('pop', {loop:false,volume: 0.3});
-        //CONSTANTE EVENTOS
+        // CONSTANTE EVENTOS
         const eventos = Phaser.Input.Events;
-        //Nubes derecha
+        // Nubes derecha
         this.nube1 = this.add.image(-200,150, 'nube').setAlpha(0.2).setScale(0.6);
         this.nube2 = this.add.image(50,150, 'nube').setAlpha(0.2).setScale(0.3);
         this.nube3 = this.add.image(200,600, 'nube').setAlpha(0.2).setScale(0.6);
@@ -50,6 +42,7 @@ class Menu extends Phaser.Scene{
         this.timeline = this.tweens.createTimeline(); 
         this.timeline2 = this.tweens.createTimeline(); 
 
+        // TIMELINES NUBES DERECHA
         this.timeline = this.tweens.timeline({
             targets: [this.nube1,this.nube2,this.nube3,this.nube6,this.nube7,this.nube9],
             paused: true,
@@ -65,6 +58,7 @@ class Menu extends Phaser.Scene{
         });
         this.timeline.play();
 
+        // TIMELINES NUBES IZQUIERDA
         this.timeline2 = this.tweens.timeline({
             targets: [this.nube4,this.nube5,this.nube8],
             paused: true,
@@ -97,40 +91,6 @@ class Menu extends Phaser.Scene{
             this.sound.pauseAll();
             this.scene.start("SceneA");         
         }, this);
-        // //EVENTO SÓLO PARA CONFIG
-        // this.config.on(eventos.POINTER_DOWN, function () {
-        //     if(this.click1 == false)
-        //     {
-        //         this.click1 = true;
-        //         this.soundIcon.setAlpha(1);
-        //         this.noSoundIcon.setAlpha(1);
-        //         //console.log(this.click1)
-        //     }else{
-        //         this.click1 = false;
-        //         this.soundIcon.setAlpha(0);
-        //         this.noSoundIcon.setAlpha(0);         
-        //     }
-        // }, this);
-        // //EVENTO SÓLO PARA INFO
-        // this.info.on(eventos.POINTER_DOWN, function () {
-        //     if(this.click2 == false){
-        //         this.infoCuadro.setAlpha(1);
-        //         this.click2 = true;
-        //     }else{
-        //         this.infoCuadro.setAlpha(0);
-        //         this.click2 = false;
-        //     }
-        // }, this);
-        // //EVENTO SÓLO PARA SOUND
-        // this.soundIcon.on(eventos.POINTER_DOWN, function () {
-        //     this.noSound = false;
-        //     this.mainmenu.play();
-        // }, this);
-        // //EVENTO SÓLO PARA NO SOUND
-        // this.noSoundIcon.on(eventos.POINTER_DOWN, function () {
-        //     this.noSound = true;
-        //     this.mainmenu.stop();
-        // }, this);
     }
 
     update(time, delta) {

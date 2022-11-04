@@ -8,9 +8,7 @@ class Win extends Phaser.Scene{
     init() {
         console.log('Escena Win');
     }
-    // preload() {
-    // }
-
+    
     create(){
         this.fondo = this.add.image(775, 395, 'winBack').setScale(.37,.33);
         this.menu = this.add.image(800, 650, 'botonMenu').setScale(.25).setInteractive();

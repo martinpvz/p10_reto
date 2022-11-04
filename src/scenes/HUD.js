@@ -8,21 +8,20 @@ class HUD extends Phaser.Scene{
     init() {
         console.log('Escena HUD');
     }
-    
-    // preload() {
-    // }
 
     create() {
+        // IMAGEN CORAZONES
         this.cora= this.add.image(1450, 40, 'heart').setScale(.25).setDepth(10).setTint('0x943126');
         this.cora2= this.add.image(1500, 40, 'heart').setScale(.25).setDepth(10).setTint('0x943126');
         this.cora3= this.add.image(1550, 40, 'heart').setScale(.25).setDepth(10).setTint('0x943126');
 
+        // VARIABLES PARA SCENES
         let ourGame = this.scene.get('SceneA');
         let ourGameB = this.scene.get('SceneB');
         let ourGameW = this.scene.get('SceneB');
         this.score = 0;
 
-        //  Listen for events from it
+        //  ESCUCHAR EVENTOS
         ourGame.events.on('loseHeart', function () {
             this.score += 10;
             console.log(this.score)
@@ -51,7 +50,7 @@ class HUD extends Phaser.Scene{
 
         }, this);
 
-        //  Listen for events from it
+        // ESCUCHAR EVENTOS
         ourGameB.events.on('loseHeart', function () {
             this.score += 10;
             console.log(this.score)
@@ -79,7 +78,6 @@ class HUD extends Phaser.Scene{
             }
         }, this);
 
-        
         //  EVENTO CUANDO SE GANA
         ourGameW.events.on('YouWin', function () {
             setTimeout(() => {
@@ -96,24 +94,10 @@ class HUD extends Phaser.Scene{
             this.score = 0;
             console.log(this.score)
         }, this);
-
-        // console.log(this.contadorVidas)
-    
-        // listen to 'update-count' event and call `updateCount()`
-        // when it fires
-        // eventsCenter.on('update-count', this.contadorVidas, this);
-    
-        // clean up when Scene is shutdown
-        // this.events.on(Phaser.Scenes.Events.SHUTDOWN, () => {
-        //     eventsCenter.off('update-count', this.contadorVidas, this)
-        // })
     }
-
-
+    
     update(time, delta) {
     }
-
-
 }
 
 export default HUD;

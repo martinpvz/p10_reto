@@ -39,7 +39,6 @@ class Bootloader extends Phaser.Scene{
     create(){
         this.scene.start('Menu');
         this.scene.launch('HUD');
-        // this.scene.moveAbove('Bootloader','HUD');
         console.log(this.scene.manager.scenes)
     }
 

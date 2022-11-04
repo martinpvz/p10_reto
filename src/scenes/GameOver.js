@@ -8,8 +8,6 @@ class GameOver extends Phaser.Scene{
     init() {
         console.log('Escena GameOver');
     }
-    // preload() {
-    // }
 
     create(){
         this.fondo = this.add.image(775, 395, 'gameOverBack').setScale(.365);
