@@ -11,7 +11,6 @@ class SceneB extends Phaser.Scene{
     
     // preload() {
     //     this.load.path = './assets/';
-
     // }
 
     create() {

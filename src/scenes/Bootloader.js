@@ -28,10 +28,14 @@ class Bootloader extends Phaser.Scene{
         this.load.audio('musicaFondo', ['./musicaFondo.mp3']);
         //PARA ESCENA GAMEOVER
         this.load.image(['gameOverBack','botonMenu2']);
+        this.load.audio('gameOver', ['./game_over.mp3']);
+        //PARA ESCENA YOU WIN
+        this.load.image(['winBack','botonMenu']);
+        this.load.audio('win', ['./winner.mp3']);       
     }
 
     create(){
-        this.scene.start('GameOver');
+        this.scene.start('Menu');
     }
 
     update(time, delta) {
