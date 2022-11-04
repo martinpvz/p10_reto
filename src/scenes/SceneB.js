@@ -5,8 +5,10 @@ class SceneB extends Phaser.Scene{
         });
     }
 
-    init() {
+    init(data) {
         console.log('Escena SceneB');
+        console.log('init', data);
+        this.finalScore = data.score;
     }
     
     // preload() {
@@ -142,8 +144,18 @@ class SceneB extends Phaser.Scene{
         
         //COLISIÓN CON PICOS
         this.physics.add.collider(this.javier, this.picos, () => {
-            this.musicaFondo.stop();
-            this.scene.restart();
+            // this.musicaFondo.stop();
+            // this.scene.restart();
+            this.finalScore -= 1;
+            this.events.emit('addScore');
+            this.javier.body.x=50;
+            this.javier.body.y=10;
+            if (this.finalScore==0){
+                // this.musicaFondo.stop();
+                // this.musicaFondo.stop();
+                this.sound.pauseAll();
+                this.scene.start('GameOver');
+            }
         });
 
         //COLISIÓN CON PUERTA / FINAL DE NIVEL

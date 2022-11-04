@@ -12,6 +12,7 @@ class Menu extends Phaser.Scene{
     //preload(){}
 
     create(){
+        this.scene.moveAbove('Bootloader','HUD');
         //Banderas
         this.click1 = false;
         this.click2 = false;
