@@ -1,19 +1,15 @@
-class Inicio extends Phaser.Scene{
+class Menu extends Phaser.Scene{
     constructor(){
         super({
-            key: 'Inicio'
+            key: 'Menu'
         });
     }
 
     init() {
         console.log('Escena Inicio');
     }
-    preload() {
-        this.load.path = './assets/';
-        this.load.image(['nube','fondo','play','info','conf','logo','sound','noSound','infoCuadro']);
-        this.load.audio('pop', ['./pop.mp3']);
-        this.load.audio('InicioM', ['./InicioM2.mp3']);
-    }
+
+    //preload(){}
 
     create(){
         //Banderas
@@ -96,7 +92,7 @@ class Inicio extends Phaser.Scene{
         //EVENTO SÓLO PARA PLAY
         this.play.on(eventos.POINTER_DOWN, function () {
             this.sound.pauseAll();
-            this.scene.start("Fisicas");         
+            this.scene.start("SceneA");         
         }, this);
         //EVENTO SÓLO PARA CONFIG
         this.config.on(eventos.POINTER_DOWN, function () {
@@ -139,4 +135,4 @@ class Inicio extends Phaser.Scene{
     }
 }
 
-export default Inicio;
+export default Menu;
