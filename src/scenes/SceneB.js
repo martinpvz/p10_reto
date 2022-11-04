@@ -1,12 +1,12 @@
-class Fisicas2 extends Phaser.Scene{
+class SceneB extends Phaser.Scene{
     constructor(){
         super({
-            key: 'Fisicas2'
+            key: 'SceneB'
         });
     }
 
     init() {
-        console.log('Escena Fisicas2');
+        console.log('Escena SceneB');
     }
     
     preload() {
@@ -202,4 +202,4 @@ class Fisicas2 extends Phaser.Scene{
 
 }
 
-export default Fisicas2;
+export default SceneB;

@@ -1,12 +1,12 @@
-class Fisicas extends Phaser.Scene{
+class SceneA extends Phaser.Scene{
     constructor(){
         super({
-            key: 'Fisicas'
+            key: 'SceneA'
         });
     }
 
     init() {
-        console.log('Escena Fisicas');
+        console.log('Escena SceneA');
     }
     
     preload() {
@@ -166,7 +166,7 @@ class Fisicas extends Phaser.Scene{
             this.gong.play();
             this.instrucciones.setAlpha(0);
             this.sound.pauseAll();
-            this.scene.start("Fisicas2"); 
+            this.scene.start("SceneB"); 
         });
     }
 
@@ -214,8 +214,6 @@ class Fisicas extends Phaser.Scene{
         }
 
     }
-
-
 }
 
-export default Fisicas;
+export default SceneA;
